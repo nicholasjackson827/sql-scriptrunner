@@ -7,6 +7,7 @@ datasources:
 actions:
   - name: log
     type: LOG
+    folderBasePath: C:/Users/nicho_000/Documents/sql-scriptrunner/
 
 queries:
   - name: get_30_eldest_employees
@@ -18,4 +19,14 @@ queries:
       limit 30;
     frequency:
       seconds: 10
+    action: log
+  - name: get_20_youngest_employees
+    source: mysql
+    query: |
+      select *
+      from employees
+      order by hire_date desc
+      limit 20;
+    frequency:
+      seconds: 15
     action: log

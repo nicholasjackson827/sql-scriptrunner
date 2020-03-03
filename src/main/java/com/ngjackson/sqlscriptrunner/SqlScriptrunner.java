@@ -28,15 +28,6 @@ public class SqlScriptrunner {
     try {
       // Grab the Scheduler instance from the Factory
       Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
-//
-//      // define the job and tie it to our HelloJob class
-//      JobDetail job = newJob(HelloJob.class)
-//          .withIdentity("job1", "group1")
-//          .build();
-//
-//
-//      // Tell quartz to schedule the job using our trigger
-//      scheduler.scheduleJob(job, trigger);
 
       // For each query in the config
       for (Query query : config.getQueries()) {

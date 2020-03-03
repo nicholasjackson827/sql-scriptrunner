@@ -13,8 +13,9 @@ public class Action {
 
   private String name;
   private ActionType type;
+  private String folderBasePath;
 
-  private enum ActionType {
+  public enum ActionType {
     LOG
   }
 
