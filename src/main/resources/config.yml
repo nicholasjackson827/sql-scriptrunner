@@ -1,23 +1,21 @@
 datasources:
-  - datasource:
-      name: mysql
-      url: jdbc:mysql://localhost:3306/employees
-      username: root
-      password: root
+  - name: mysql
+    url: jdbc:mysql://localhost:3306/employees
+    username: root
+    password: root
 
 actions:
-  - action:
-      name: log
-      type: log
+  - name: log
+    type: LOG
 
 queries:
-  - query:
-      name: get_30_eldest_employees
-      query: |
-        select *
-        from employees
-        order by birth_date
-        limit 30;
-      frequency:
-        minutes: 15
-      action: log
+  - name: get_30_eldest_employees
+    source: mysql
+    query: |
+      select *
+      from employees
+      order by birth_date
+      limit 30;
+    frequency:
+      seconds: 10
+    action: log
